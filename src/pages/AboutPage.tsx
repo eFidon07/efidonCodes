@@ -7,7 +7,7 @@ import { jobs } from "../data/jobs";
 const AboutPage = () => {
   return (
     <section
-      className="w-full min-h-screen overflow-auto pb-20 md:pb-12"
+      className="w-full min-h-screen pb-20 md:pb-12"
       style={{
         backgroundImage: `linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0.8)), url(${Background})`,
         backgroundSize: "cover",

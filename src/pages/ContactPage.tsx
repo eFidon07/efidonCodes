@@ -13,7 +13,7 @@ const ContactPage = () => {
   });
 
   return (
-    <section className="w-full h-screen">
+    <section className="w-full min-h-screen md:h-screen">
       <div className="max-w-screen-2xl w-full mx-auto h-full flex flex-col px-10 pt-28 text-white">
         <p className="border-b pb-2 mb-4">Contact me</p>
 

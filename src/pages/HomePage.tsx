@@ -8,7 +8,7 @@ const HomePage = () => {
 
   return (
     <section
-      className="w-full min-h-screen md:h-dvh overflow-auto bg-right-top md:bg-right"
+      className="w-full min-h-screen md:h-dvh bg-right-top md:bg-right"
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${Background})`,
         backgroundSize: "cover",
