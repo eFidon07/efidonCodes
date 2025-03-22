@@ -19,8 +19,8 @@ const ProjectCard = (props: { project: ProjectProps | WorkProps }) => {
           {props.project.type}
         </span>
 
-        <div className="flex gap-x-[5%] mt-2">
-          <div className="w-[45%]">
+        <div className="flex flex-col md:flex-row gap-x-[5%] mt-2">
+          <div className="w-full md:w-[45%]">
             <p
               dangerouslySetInnerHTML={{ __html: props.project.description }}
               className="text-sm"
@@ -28,7 +28,7 @@ const ProjectCard = (props: { project: ProjectProps | WorkProps }) => {
 
             <Link
               to={props.project.projectLink}
-              className="block w-fit mt-4 underline underline-offset-2 text-sm hover:text-lime-500 hover:no-underline transition-all duration-300"
+              className="hidden md:block w-fit mt-4 underline underline-offset-2 text-sm hover:text-lime-500 hover:no-underline transition-all duration-300"
               target="_blank"
               rel="noreferrer noopener"
             >
@@ -36,7 +36,7 @@ const ProjectCard = (props: { project: ProjectProps | WorkProps }) => {
             </Link>
           </div>
 
-          <div className="w-1/4 flex flex-col gap-y-4">
+          <div className="md:w-1/4 flex md:flex-col justify-between md:justify-start mt-4 md:mt-0 gap-y-4">
             {/* Project role */}
             <div>
               <p>Role</p>
@@ -57,7 +57,7 @@ const ProjectCard = (props: { project: ProjectProps | WorkProps }) => {
 
           {"collaborators" in props.project &&
           props.project.collaborators?.length ? (
-            <div className="w-[20%]">
+            <div className="mt-4 md:mt-0 w-[20%]">
               <p>Collaborators</p>
               <ul className="w-full flex flex-col gap-y-2">
                 {props.project.collaborators.map((collaborator, index) => (
@@ -79,6 +79,15 @@ const ProjectCard = (props: { project: ProjectProps | WorkProps }) => {
               </ul>
             </div>
           ) : null}
+
+          <Link
+            to={props.project.projectLink}
+            className="block md:hidden w-fit mt-7 underline underline-offset-2 text-sm hover:text-lime-500 hover:no-underline transition-all duration-300"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Visit website
+          </Link>
         </div>
       </div>
     </div>

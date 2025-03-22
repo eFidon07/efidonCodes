@@ -1,18 +1,32 @@
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { footerlinks, menuLinks } from "../data/constants";
 import { ExternalLink } from ".";
+import { useEffect, useRef } from "react";
 
 const Menu = (props: { isMenuOpen: boolean; closeMenu: () => void }) => {
+  const menuRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    menuRef.current?.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
+  }, [props.isMenuOpen]);
+
   return (
     <div
+      ref={menuRef}
       className={`${
-        props.isMenuOpen ? "w-full" : "w-0"
-      } h-screen fixed z-50 top-0 right-0 bg-[rgba(23,23,23,0.4)] backdrop-blur-lg transition-all duration-150`}
+        props.isMenuOpen ? "w-full z-[9999] backdrop-blur-lg" : "w-0 z-50"
+      } h-dvh overflow-auto fixed top-0 right-0 bg-[rgba(23,23,23,0.4)] transition-all duration-150`}
     >
-      <nav className="max-w-screen-2xl w-full px-10 pt-10 flex items-center justify-between fixed top-0 left-1/2 -translate-x-1/2 z-40 text-white">
+      <nav
+        className={`max-w-screen-2xl ${
+          props.isMenuOpen ? "visible" : "invisible"
+        } w-full px-10 pt-10 pb-4 flex items-center justify-between backdrop-blur-md md:backdrop-blur-none z-[10000] md:z-0 fixed top-0 left-1/2 -translate-x-1/2 text-white`}
+      >
         <Link
           to="/"
           role="heading"
@@ -25,7 +39,7 @@ const Menu = (props: { isMenuOpen: boolean; closeMenu: () => void }) => {
           eFidon<span className="text-lime-500">Codes.</span>
         </Link>
 
-        <span className="w-32 text-xs text-center">
+        <span className="hidden md:block w-32 text-xs text-center">
           full-stack web & mobile developer
         </span>
 
@@ -37,8 +51,8 @@ const Menu = (props: { isMenuOpen: boolean; closeMenu: () => void }) => {
         </button>
       </nav>
 
-      <div className="max-w-screen-2xl w-full mx-auto px-10 mt-40 text-white flex">
-        <div className="w-1/2 flex flex-col gap-y-8">
+      <div className="max-w-screen-2xl -z-30 md:z-0 w-full mx-auto px-10 mt-40 mb-10 md:pb-0 text-white flex flex-col md:flex-row items-center md:items-start">
+        <div className="w-3/4 md:w-1/2 flex flex-col gap-y-8">
           {menuLinks.map((link, index) => (
             <NavLink
               to={link.path}
@@ -49,7 +63,7 @@ const Menu = (props: { isMenuOpen: boolean; closeMenu: () => void }) => {
               }}
               key={index}
               className={({ isActive }) =>
-                `group w-fit text-6xl flex items-center gap-x-4 ${
+                `group w-full md:w-fit text-3xl md:text-4xl lg:text-6xl flex items-center justify-center gap-x-4 ${
                   isActive && "text-lime-500"
                 }`
               }
@@ -66,7 +80,7 @@ const Menu = (props: { isMenuOpen: boolean; closeMenu: () => void }) => {
           ))}
         </div>
 
-        <div className="w-1/2 flex flex-col gap-y-8">
+        <div className="w-1/2 mt-20 md:mt-0 flex flex-col gap-y-8">
           {footerlinks.map((link, index) => (
             <Link
               to={link.url}

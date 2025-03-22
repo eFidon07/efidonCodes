@@ -12,7 +12,7 @@ const TextArea = (props: TextAreaProps) => {
   };
 
   return (
-    <div className="w-[800px] relative">
+    <div className="w-full md:w-[800px] relative">
       <textarea
         ref={textareaRef}
         name={props.name}
@@ -21,14 +21,14 @@ const TextArea = (props: TextAreaProps) => {
         onInput={handleInput}
         onChange={props.onTextChange}
         rows={1}
-        className={`peer w-full pt-12 pb-4 px-4 text-white text-xl border-b border-zinc-300 focus:outline-none focus:border-white placeholder-transparent focus:placeholder-zinc-500 ${
+        className={`peer w-full pt-12 pb-4 rounded-none px-4 text-white text-xl md:text-2xl border-b border-zinc-300 focus:outline-none focus:border-white placeholder-transparent focus:placeholder-zinc-500 ${
           props.value ? "bg-[#242424]" : "bg-transparent focus:bg-[#242424]"
         } ${props.value ? "px-8" : "focus:px-8"}`}
       ></textarea>
 
       <label
         htmlFor={props.id}
-        className={`absolute left-4 top-10 text-2xl ${
+        className={`absolute left-4 top-10 text-xl md:text-2xl ${
           props.value
             ? "text-sm left-8 top-4 text-lime-500"
             : "peer-focus:text-sm peer-focus:left-8 peer-focus:top-4 peer-focus:text-lime-500"

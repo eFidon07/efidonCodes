@@ -12,7 +12,7 @@ const ProjectPage = () => {
     <section className="w-full h-screen">
       <div className="max-w-screen-2xl w-full mx-auto h-full flex flex-col px-10 pt-28 text-white">
         {/* Category section */}
-        <div className="relative overflow-hidden border-b flex">
+        <div className="relative md:overflow-hidden border-b flex">
           {projectCategory.map((label, index) => (
             <button
               key={index}
@@ -27,9 +27,9 @@ const ProjectPage = () => {
 
           {/* Indicator */}
           <div
-            className={`absolute -bottom-[3px] ${
+            className={`absolute bottom-0 ${
               category === "work" ? "left-0" : "left-28"
-            } w-28 h-1.5 bg-lime-500 rounded-md transition-all duration-300`}
+            } w-28 h-1 bg-lime-500 rounded-t-md transition-all duration-300`}
           ></div>
         </div>
 

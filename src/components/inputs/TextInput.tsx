@@ -2,7 +2,7 @@ import { InputProps } from "../../app.types";
 
 const TextInput = (props: InputProps) => {
   return (
-    <div className="w-[800px] relative">
+    <div className="w-full md:w-[800px] relative">
       <input
         type={props.type || "text"}
         name={props.name}
@@ -11,7 +11,7 @@ const TextInput = (props: InputProps) => {
         onChange={props.onTextChange}
         placeholder={props.placeholder || ""}
         autoComplete="off"
-        className={`peer w-full pt-12 pb-4 px-4 text-white text-2xl border-b border-zinc-300 focus:outline-none focus:border-white placeholder-transparent focus:placeholder-zinc-500 ${
+        className={`peer w-full pt-12 pb-4 px-4 rounded-none text-white text-xl md:text-2xl border-b border-zinc-300 focus:outline-none focus:border-white placeholder-transparent focus:placeholder-zinc-500 ${
           props.value ? "bg-[#242424]" : "bg-transparent focus:bg-[#242424]"
         } ${
           props.id === "your-budget"
@@ -25,7 +25,7 @@ const TextInput = (props: InputProps) => {
       />
       <label
         htmlFor={props.id}
-        className={`absolute left-4 top-10 text-2xl ${
+        className={`absolute left-4 top-10 text-xl md:text-2xl ${
           props.value
             ? "text-sm left-8 top-4 text-lime-500"
             : "peer-focus:text-sm peer-focus:left-8 peer-focus:top-4 peer-focus:text-lime-500"

@@ -8,26 +8,26 @@ const HomePage = () => {
 
   return (
     <section
-      className="w-full h-screen"
+      className="w-full min-h-screen md:h-dvh overflow-auto bg-right-top md:bg-right"
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${Background})`,
         backgroundSize: "cover",
       }}
     >
-      <div className="max-w-screen-2xl w-full mx-auto h-full flex flex-col px-10 pt-[32vh] text-white">
+      <div className="max-w-screen-2xl w-full mx-auto h-full flex flex-col px-8 md:px-10 pt-[32vh] text-white">
         <div className="w-fit mx-auto">
-          <p className="text-xl mb-1">
+          <p className="md:text-xl text-center md:text-left mb-1">
             Hi, I&apos;m eFidon<span className="text-lime-500">Codes</span>
           </p>
-          <h2 className="text-6xl 2xl:text-[69px] 2xl:leading-[69px] font-medium flex items-center justify-center gap-x-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[69px] 2xl:leading-[69px] font-medium flex flex-wrap items-center justify-center gap-x-4">
             <span>Backend(focused)</span>
-            <span className="block w-24 h-3 bg-lime-500" />{" "}
+            <span className="hidden md:block w-24 h-3 bg-lime-500" />{" "}
             <span className="text-lime-500">Full-stack Developer</span>
           </h2>
         </div>
 
         {/* Footer */}
-        <div className="mt-auto mb-6 flex items-end justify-between">
+        <div className="mt-32 md:mt-auto mb-6 flex flex-col md:flex-row items-center md:items-end justify-between gap-y-4">
           <div className="w-[354px] h-[189px] bg-[rgba(53,53,53,0.3)] p-4 border border-zinc-400 rounded-2xl backdrop-blur-sm text-xs flex flex-col justify-between">
             <p className="flex items-center gap-x-0.5 text-lime-500">
               •<span>info</span>
@@ -48,7 +48,7 @@ const HomePage = () => {
           </div>
 
           {/* Background-image attribution */}
-          <p className="text-xs">
+          <p className="text-xs mt-4">
             Photo by{" "}
             <a
               href="https://unsplash.com/@emilep?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"

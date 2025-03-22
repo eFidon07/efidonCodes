@@ -17,7 +17,10 @@ const ContactPage = () => {
       <div className="max-w-screen-2xl w-full mx-auto h-full flex flex-col px-10 pt-28 text-white">
         <p className="border-b pb-2 mb-4">Contact me</p>
 
-        <form method="post" className="mt-8 flex flex-col gap-y-7 pb-20">
+        <form
+          method="post"
+          className="w-full md:w-[800px] mt-8 flex flex-col gap-y-7 pb-20"
+        >
           <TextInput
             label="Your name"
             name="username"
@@ -72,11 +75,14 @@ const ContactPage = () => {
             }
           />
 
-          <button className="group mt-4 w-[400px] h-[80px] bg-[#242424] flex items-center justify-center border border-transparent hover:border-lime-500/85 hover:text-lime-500 transition-all duration-300">
+          <button
+            type="button"
+            className="group mt-4 w-full md:w-[400px] h-[80px] bg-[#242424] flex items-center justify-center border border-transparent hover:border-lime-500/85 hover:text-lime-500 transition-all duration-300"
+          >
             <span className="text-lg">Send</span>
             <Send2
               size={20}
-              className="w-0 invisible group-hover:w-fit group-hover:visible group-hover:ml-4 transition-[margin] duration-300"
+              className="ml-4 md:w-0 md:invisible md:group-hover:w-fit md:group-hover:visible md:group-hover:ml-4 transition-[margin] duration-300"
             />
           </button>
         </form>

@@ -7,7 +7,7 @@ import { jobs } from "../data/jobs";
 const AboutPage = () => {
   return (
     <section
-      className="w-full min-h-screen pb-12"
+      className="w-full min-h-screen overflow-auto pb-20 md:pb-12"
       style={{
         backgroundImage: `linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0.8)), url(${Background})`,
         backgroundSize: "cover",
@@ -16,16 +16,16 @@ const AboutPage = () => {
     >
       <div className="max-w-screen-2xl w-full mx-auto h-full flex flex-col px-10 pt-28">
         <p className="border-b pb-2 mb-4">About me</p>
-        <h1 className="text-7xl font-medium">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium">
           eFidon<span className="text-lime-500">Codes</span>
         </h1>
 
-        <div className="flex justify-between">
-          <div className="w-3/4">
+        <div className="flex flex-col md:flex-row justify-between">
+          <div className="w-full md:w-3/4">
             <span className="block w-fit mt-1 font-light">
               Full-stack web & mobile developer
             </span>
-            <p className="font-light text-3xl mt-6">
+            <p className="font-light text-xl md:text-2xl lg:text-3xl mt-6">
               I'm a passionate and fast-learning full-stack web and mobile
               developer with a strong desire to build and improve digital
               products. I love coding and enjoy the process of solving complex
@@ -39,7 +39,7 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="max-w-[20%]">
+          <div className="w-full md:max-w-[20%] mt-12 md:mt-0">
             {/* Skills */}
             <div>
               <p className="underline text-lime-500">My expertise</p>
@@ -92,11 +92,11 @@ const AboutPage = () => {
                 </span>
               </p>
 
-              <div className="flex justify-between">
-                <p className="w-1/2 text-sm">{job.description}</p>
+              <div className="flex flex-col md:flex-row justify-between">
+                <p className="w-full md:w-1/2 text-sm">{job.description}</p>
 
-                <div className="max-w-[30%] flex flex-col">
-                  <span role="heading" className="text-sm text-lime-500">
+                <div className="w-full md:max-w-[30%] flex flex-col mt-12 md:mt-0">
+                  <span role="heading" className="md:text-sm text-lime-500">
                     Technologies used:
                   </span>
 
@@ -116,7 +116,7 @@ const AboutPage = () => {
         </div>
 
         {/* Footer */}
-        <div className="max-w-screen-2xl w-full bg-black py-4 px-10 fixed left-1/2 -translate-x-1/2 bottom-0 mt-auto flex items-end justify-between">
+        <div className="max-w-screen-2xl w-full bg-black py-4 px-10 fixed left-1/2 -translate-x-1/2 bottom-0 mt-auto flex flex-wrap items-end justify-between gap-y-4">
           <Link
             to="mailto:efidoncodes@gmail.com"
             target="_blank"
