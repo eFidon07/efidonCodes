@@ -28,10 +28,10 @@ const TextArea = (props: TextAreaProps) => {
 
       <label
         htmlFor={props.id}
-        className={`absolute left-4 top-10 text-xl md:text-2xl ${
+        className={`absolute left-4 top-10 ${
           props.value
             ? "text-sm left-8 top-4 text-lime-500"
-            : "peer-focus:text-sm peer-focus:left-8 peer-focus:top-4 peer-focus:text-lime-500"
+            : "text-xl md:text-2xl peer-focus:text-sm peer-focus:left-8 peer-focus:top-4 peer-focus:text-lime-500"
         } pointer-events-none transition-all duration-200`}
       >
         {props.label}
