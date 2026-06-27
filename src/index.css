@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+body {
+  scroll-behavior: smooth;
+  background-color: #121212;
+  color: #ffffff;
+  /* Lime - #84cc16 */
+
+  font-family: "Work Sans", sans-serif;
+}
